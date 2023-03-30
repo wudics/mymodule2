@@ -1,0 +1,15 @@
+# vim: set sts=2 ts=8 sw=2 tw=99 et ft=python:
+import os.path
+
+binary = AMXX.MetaModule(builder, 'mymodule2')
+
+binary.sources = [
+  '../../public/sdk/amxxmodule.cpp',
+  'mymodule2.cpp',
+]
+
+binary.compiler.defines += [
+  'HAVE_STDINT_H',
+]
+
+AMXX.modules += [builder.Add(binary)]
